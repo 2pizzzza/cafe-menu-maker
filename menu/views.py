@@ -6,6 +6,9 @@ class CategoryListView(generics.ListAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
+class CategoryWithMealsListView(generics.ListAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategoryDetailSerializer
 
 class CategoryDetailView(generics.RetrieveAPIView):
     queryset = Category.objects.all()
