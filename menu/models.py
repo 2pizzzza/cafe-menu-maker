@@ -1,6 +1,8 @@
 from django.core import validators
 from django.db import models
 
+from main import settings
+
 
 class Category(models.Model):
     """Category Model"""
@@ -21,7 +23,7 @@ class Meals(models.Model):
     name = models.CharField("Name", max_length=30, db_index=True, unique=True)
     price = models.DecimalField("Price", max_digits=7, decimal_places=2, default=100,
                                 validators=[validators.MinValueValidator(0)])
-    picture = models.ImageField("Image", null=True, blank=True)
+    picture = models.ImageField("Image", null=True, blank=True, upload_to=settings.MENU_IMAGE_FOLDER)
     category = models.ForeignKey(Category, verbose_name='Category', on_delete=models.CASCADE)
 
     def __str__(self):
