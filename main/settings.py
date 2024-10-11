@@ -102,16 +102,7 @@ DATABASES = {
 }
 
 # A dictionary named CACHES, which contains caching configurations.
-CACHES = {
-    # we use "default" as the alias.
-    "default": {
-        # Here, we're using the file-based cache backend.
-        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
 
-        # LOCATION parameter to specify the file system path where cached data will be stored.
-        "LOCATION": "/var/tmp/django_cache",
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
