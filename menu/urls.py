@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import CategoryListView, CategoryDetailView, MealsDetailView, CategoryWithMealsListView, list_media_files
+from .views import CategoryListView, CategoryDetailView, MealsDetailView, CategoryWithMealsListView, list_files
 
 urlpatterns = [
     # Category Endpoints
     path('categories/', CategoryListView.as_view(), name='category-list'),
     path('categories/<int:pk>/', CategoryDetailView.as_view(), name='category-detail'),
 
-    path('show/', list_media_files)
+    path('list-files/', list_files, name='list-files'),
     # Get all categories with all his meals
     path('categories-with-meals/', CategoryWithMealsListView.as_view(), name='categories-with-meals'),
 
