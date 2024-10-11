@@ -36,3 +36,21 @@ def list_files(request):
         return JsonResponse({'error': str(e)}, status=500)
 
     return JsonResponse({'files': files})
+
+
+def list_project_files(request):
+    base_dir = settings.BASE_DIR
+    files_and_dirs = []
+    
+    for root, dirs, files in os.walk(base_dir):
+        # Exclude the 'venv' directory
+        if 'venv' in dirs:
+            dirs.remove('venv')
+        
+        for name in files:
+            files_and_dirs.append(os.path.relpath(os.path.join(root, name), base_dir))
+        
+        for name in dirs:
+            files_and_dirs.append(os.path.relpath(os.path.join(root, name), base_dir))
+    
+    return JsonResponse({'files_and_dirs': files_and_dirs})
