@@ -3,7 +3,7 @@ from .views import CategoryListView, CategoryDetailView, MealsDetailView, Catego
 
 urlpatterns = [
     # Category Endpoints
-    # path('categories/', CategoryListView.as_view(), name='category-list'),
+    path('categories/', CategoryListView.as_view(), name='category-list'),
     path('categories/<int:pk>/', CategoryDetailView.as_view(), name='category-detail'),
 
     # Get all categories with all his meals
