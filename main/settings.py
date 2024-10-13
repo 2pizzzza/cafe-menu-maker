@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+FILE_UPLOAD_MAX_MEMORY_SIZE = 15728640  # 15 MB in bytes
+
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:5173',
 # ]
