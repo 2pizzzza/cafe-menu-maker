@@ -3,8 +3,6 @@ from decimal import Decimal
 from django.core import validators
 from django.db import models
 
-from main import settings
-
 
 class Category(models.Model):
     """Category Model"""

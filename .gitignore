@@ -2,3 +2,4 @@ venv
 .idea
 .env
 static/media/menu/*
+db.sqlite3

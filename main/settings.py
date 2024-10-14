@@ -21,17 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-^f9yprsz)w-=8pvkintf)##8oxv&lrvcquo79(t)m*ny=q*c_v'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-FILE_UPLOAD_MAX_MEMORY_SIZE = 15728640  # 15 MB in bytes
 
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:5173',
@@ -145,6 +142,8 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 15728640  # 15 MB in bytes
 
 # This setting informs Django of the URI path from which your static files will be served to users
 # Here, they well be accessible at your-domain.onrender.com/static/... or yourcustomdomain.com/static/...

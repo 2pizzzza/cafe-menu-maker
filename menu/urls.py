@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import CategoryListView, CategoryDetailView, MealsDetailView, CategoryWithMealsListView, list_files ,list_project_files
+from .views import CategoryListView, CategoryDetailView, MealsDetailView, CategoryWithMealsListView, list_files, \
+    list_project_files
 
 urlpatterns = [
     # Category Endpoints

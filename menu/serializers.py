@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Category, Meals
 
+
 class MealsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meals
