@@ -14,7 +14,7 @@ class Order(models.Model):
     total_guests = models.PositiveIntegerField(default=0)
     comment = models.TextField(blank=True)
 
-    TOTAL_TABLES = 50
+    TOTAL_TABLES = 35
     SEATS_PER_TABLE = 4
 
     def clean(self):
