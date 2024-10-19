@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'menu',
     'event',
+    'order',
 ]
 
 SWAGGER_SETTINGS = {
