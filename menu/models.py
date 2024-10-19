@@ -32,3 +32,25 @@ class Meals(models.Model):
     class Meta:
         verbose_name = 'Meal'
         verbose_name_plural = 'Meals'
+
+
+class Review(models.Model):
+    """Review Model"""
+
+    picture = models.ImageField("Image", upload_to="images/")
+
+    def __str__(self):
+        return str(self.picture)
+
+
+class Gallery(models.Model):
+    """Galleries Model"""
+
+    picture = models.ImageField("Image", upload_to="images/")
+
+    class Meta:
+        verbose_name = 'Gallery'
+        verbose_name_plural = 'Galleries'
+
+    def __str__(self):
+        return str(self.picture)

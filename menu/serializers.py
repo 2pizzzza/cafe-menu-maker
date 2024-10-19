@@ -1,7 +1,8 @@
 from rest_framework import serializers
-from .models import Category, Meals
+from .models import Category, Meals, Review, Gallery
 
 
+# Menu
 class MealsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Meals
@@ -20,3 +21,16 @@ class CategoryDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 'name', 'meals']
+
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ['id', 'picture']
+
+
+class GallerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gallery
+        fields = ['id', 'picture']

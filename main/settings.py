@@ -29,7 +29,6 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-
 # CORS_ALLOWED_ORIGINS = [
 #     'http://localhost:5173',
 # ]
@@ -46,8 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'menu',
     'drf_yasg',
+    'menu',
+    'event',
 ]
 
 SWAGGER_SETTINGS = {
@@ -139,7 +139,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_ROOT = BASE_DIR / STATIC_URL / "media"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
