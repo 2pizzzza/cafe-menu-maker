@@ -5,6 +5,7 @@ from django.utils.dateparse import parse_date
 from rest_framework import generics, status
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from .models import Order
 from .serializers import OrderSerializer
@@ -70,6 +71,15 @@ class OrderUpdateView(generics.UpdateAPIView):
                 return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+class FreeTablesView(APIView):
+    def get(self, request, date_str):
+        date = parse_date(date_str)
+        if date is None:
+            return Response({'error': 'Неверный формат даты'}, status=400)
+
+        free_tables = Order.get_free_tables_on_date(date)
+        return Response(free_tables)
 
 class OrderDeleteView(generics.DestroyAPIView):
     queryset = Order.objects.all()

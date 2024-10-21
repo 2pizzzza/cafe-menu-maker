@@ -2,7 +2,7 @@ from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from .views import OrderListCreateView, OrderRetrieveView, OrdersByDayView, OrdersByWeekView, OrderUpdateView, \
-    OrderDeleteView
+    OrderDeleteView, FreeTablesView
 
 urlpatterns = [
     # Create order and get all orders
@@ -26,4 +26,7 @@ urlpatterns = [
     # Login for Admin
     path('auth/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # Get free table by day
+    path('orders/free-tables/<str:date_str>/', FreeTablesView.as_view(), name='free-tables'),
 ]
